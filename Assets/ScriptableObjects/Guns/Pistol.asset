@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   gunName: Pistol
-  firerate: 9000
-  prefab: {fileID: 5941602187840188689, guid: accd078775758aa4faa84ccc06c993dc, type: 3}
+  firerate: 0.15
+  aimSpeed: 7
+  bloom: 15
+  recoil: 10
+  kickback: 0.15
+  damage: 350
+  ammo: 120
+  clipsize: 8
+  reloadTime: 1.5
+  burst: 0
+  prefab: {fileID: 4588427754933877228, guid: accd078775758aa4faa84ccc06c993dc, type: 3}

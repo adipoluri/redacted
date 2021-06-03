@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 namespace com.AstralSky.FPS
 {
-    public class Sway : MonoBehaviour
+    public class Sway : MonoBehaviourPunCallbacks
     {
         #region Variables
 
         public float intensity;
         public float smooth;
-
+        public bool isMine;
         private Quaternion origin_rotation;
 
 
@@ -26,6 +27,7 @@ namespace com.AstralSky.FPS
 
 
         private void Update() {
+            
             UpdateSway();
         }
 
@@ -42,6 +44,12 @@ namespace com.AstralSky.FPS
             //Controls
             float t_x_mouse = Input.GetAxis("Mouse X");
             float t_y_mouse = Input.GetAxis("Mouse Y");
+
+            if(!isMine)
+            {
+                t_x_mouse = 0;
+                t_y_mouse = 0;
+            }
 
             //calculate Target rotation
             Quaternion t_x_adj = Quaternion.AngleAxis(intensity * t_x_mouse * -1, Vector3.up);
