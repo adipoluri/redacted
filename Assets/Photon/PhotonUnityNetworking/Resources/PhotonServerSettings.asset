@@ -41,6 +41,8 @@ MonoBehaviour:
   - Equip
   - Shoot
   - TakeDamage
+  - setCrouch
+  - SetCrouch
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

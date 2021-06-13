@@ -15,6 +15,7 @@ namespace com.AstralSky.FPS
         public Gun[] loadout;
         public Transform weaponParent;
         public GameObject bulletHolePrefab;
+        public GameObject bloodParticles;
         public LayerMask canBeShot;
         public bool isAiming = false;
 
@@ -123,14 +124,18 @@ namespace com.AstralSky.FPS
             Transform t_anchor = currentWeapon.transform.Find("Anchor");
             Transform t_state_ads = currentWeapon.transform.Find("States/ADS");
             Transform t_state_hip = currentWeapon.transform.Find("States/Hip");
+            GameObject t_sight_toggle = currentWeapon.transform.Find("Anchor/Design/Body/Sights").gameObject;
+
 
             if(p_isAiming) 
             {
                 t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_ads.position, Time.deltaTime * loadout[currentIndex].aimSpeed);
+                t_sight_toggle.SetActive(true);
             }
             else 
             {
                 t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_hip.position, Time.deltaTime * loadout[currentIndex].aimSpeed);
+                t_sight_toggle.SetActive(false);
             }
         }
 
@@ -152,18 +157,30 @@ namespace com.AstralSky.FPS
             //raycast
             RaycastHit t_hit = new RaycastHit();
             if(Physics.Raycast(t_spawn.position, t_bloom, out t_hit, 1000f, canBeShot))
-            {
-                GameObject t_newHole = Instantiate (bulletHolePrefab, t_hit.point + t_hit.normal * 0.001f, Quaternion.identity) as GameObject;
-                t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
-                Destroy(t_newHole, 5f);
+            {  
+                bool t_playerHit = false;
 
                 if(photonView.IsMine)
                 {   
                     //shooting other player on network
                     if(t_hit.collider.gameObject.layer == 15)
                     {
-                        t_hit.collider.gameObject.GetPhotonView().RPC("TakeDamage", RpcTarget.All, loadout[currentIndex].damage);
+                        t_hit.collider.transform.root.gameObject.GetPhotonView().RPC("TakeDamage", RpcTarget.All, loadout[currentIndex].damage);
+                        t_playerHit = true;
                     }
+                }
+
+                if(t_playerHit)
+                {
+                    GameObject t_newHole = Instantiate (bloodParticles, t_hit.point + t_hit.normal * 0.001f, Quaternion.identity) as GameObject;
+                    t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
+                    Destroy(t_newHole, 2f);
+                }
+                else
+                {
+                    GameObject t_newHole = Instantiate (bulletHolePrefab, t_hit.point + t_hit.normal * 0.001f, Quaternion.identity) as GameObject;
+                    t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
+                    Destroy(t_newHole, 5f);
                 }
             }
 
