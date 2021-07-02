@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: MS1
+  m_EditorClassIdentifier: 
+  gunName: MS1
+  firingType: 0
+  burstAmount: 0
+  pellets: 12
+  recovery: 0
+  canBeAimed: 0
+  damage: 80
+  headShotMultiplier: 2
+  firerate: 0.25
+  ammo: 36
+  clipsize: 4
+  reloadTime: 1.75
+  aimSpeed: 7
+  bloom: 100
+  adsBloom: 80
+  recoil: 7
+  adsRecoil: 7
+  kickback: 0.2
+  muzzleFlash: {fileID: 718690339124133421, guid: 5abb44553c1cd594bb22884210de0c3f, type: 3}
+  muzzleFlashScale: 0.5
+  gunshotSound: {fileID: 8300000, guid: 5cd5172fb45de7f40bbd9b2af3847840, type: 3}
+  equipSound: {fileID: 8300000, guid: 1e5da26537154c947af732b6530e0a59, type: 3}
+  reloadSound: {fileID: 8300000, guid: 2a3e0f73be2cec0439116c319bd7dda4, type: 3}
+  chargingSound: {fileID: 0}
+  pitchRandomization: 0.25
+  mainFOV: 1
+  weaponFOV: 0
+  prefab: {fileID: 4588427754933877228, guid: 429e3776f0f5bca4a8212b5043fcb7c9, type: 3}
+  display: {fileID: 4588427754933877228, guid: 8a0b8e7f7ce8ce24895e836696661e2e, type: 3}

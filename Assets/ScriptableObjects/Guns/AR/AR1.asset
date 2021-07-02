@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: AR1
+  m_EditorClassIdentifier: 
+  gunName: AR1
+  firingType: 1
+  burstAmount: 0
+  pellets: 0
+  recovery: 0
+  canBeAimed: 1
+  damage: 300
+  headShotMultiplier: 3
+  firerate: 0.09
+  ammo: 210
+  clipsize: 30
+  reloadTime: 2.5
+  aimSpeed: 10
+  bloom: 75
+  adsBloom: 65
+  recoil: 1.5
+  adsRecoil: 1.25
+  kickback: 0.03
+  muzzleFlash: {fileID: 5658046897136282605, guid: 087326b9e1a7aa54d9628fff2e87c310, type: 3}
+  muzzleFlashScale: 1
+  gunshotSound: {fileID: 8300000, guid: 9abed5b8e18297445be34ed3a2d79c84, type: 3}
+  equipSound: {fileID: 8300000, guid: ce091e0277698094d986e712f86ba054, type: 3}
+  reloadSound: {fileID: 8300000, guid: e5809418230df354b802400127e1c2f1, type: 3}
+  pitchRandomization: 0.1
+  mainFOV: 0.7
+  weaponFOV: 0.45
+  prefab: {fileID: 4588427754933877228, guid: c05adda668b974848b204c819608d277, type: 3}
+  display: {fileID: 4588427754933877228, guid: 4110917b43aa8e7479895262f9de91d1, type: 3}

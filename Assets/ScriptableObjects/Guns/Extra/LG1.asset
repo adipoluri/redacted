@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: LG1
+  m_EditorClassIdentifier: 
+  gunName: LG1
+  firingType: 3
+  burstAmount: 0
+  pellets: 0
+  recovery: 0
+  canBeAimed: 0
+  damage: 1000
+  headShotMultiplier: 5
+  firerate: 0.07
+  ammo: 9
+  clipsize: 1
+  reloadTime: 4
+  aimSpeed: 10
+  bloom: 10
+  adsBloom: 10
+  recoil: 15
+  adsRecoil: 5
+  kickback: 1
+  muzzleFlash: {fileID: 718690339124133421, guid: a59ff2fc409098444b3787562ec26b66, type: 3}
+  muzzleFlashScale: 3
+  gunshotSound: {fileID: 8300000, guid: 7458f70178a621f41bc7458b4c4b730b, type: 3}
+  equipSound: {fileID: 8300000, guid: 7e0ed12ba9dbb7c4595ff9078210db38, type: 3}
+  reloadSound: {fileID: 8300000, guid: e2b638cf50681ec4c9a1f3cf6e48cafb, type: 3}
+  chargingSound: {fileID: 8300000, guid: 2fe88bc006501c1418802017ce42d44c, type: 3}
+  pitchRandomization: 0.25
+  mainFOV: 1
+  weaponFOV: 0
+  prefab: {fileID: 4588427754933877228, guid: c97e7eeed96a74d46ad439da2cb23f90, type: 3}
+  display: {fileID: 4588427754933877228, guid: 3ad7a4c048aaa9845838d78410a7e8da, type: 3}

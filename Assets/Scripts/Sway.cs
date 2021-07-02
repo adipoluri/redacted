@@ -28,6 +28,7 @@ namespace com.AstralSky.FPS
 
         private void Update() {
             
+            if(Pause.paused) return;
             UpdateSway();
         }
 

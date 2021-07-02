@@ -15,13 +15,13 @@ TagManager:
   - 
   - PostProcessing
   - Not in Reflection
-  - 
+  - Map Avoidable
   - 
   - Ground
   - LocalPlayer
   - Gun
   - Player
-  - 
+  - PlayerHead
   - 
   - 
   - 

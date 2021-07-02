@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: REV1
+  m_EditorClassIdentifier: 
+  gunName: REV1
+  firingType: 0
+  burstAmount: 0
+  pellets: 0
+  recovery: 0
+  canBeAimed: 0
+  damage: 330
+  headShotMultiplier: 4
+  firerate: 0.4
+  ammo: 120
+  clipsize: 8
+  reloadTime: 1.8
+  aimSpeed: 7
+  bloom: 10
+  adsBloom: 10
+  recoil: 20
+  adsRecoil: 6
+  kickback: 0.1
+  muzzleFlash: {fileID: 2327208726796981185, guid: dba9c1304df6a9f4abed020edf7d2ba3, type: 3}
+  muzzleFlashScale: 0.75
+  gunshotSound: {fileID: 8300000, guid: 9abed5b8e18297445be34ed3a2d79c84, type: 3}
+  equipSound: {fileID: 8300000, guid: f362f46f6678b504a9a0ef6c347ebd1e, type: 3}
+  reloadSound: {fileID: 8300000, guid: 49916fe3eeb718e4cbceaf3cb15e69f3, type: 3}
+  chargingSound: {fileID: 0}
+  pitchRandomization: 0.1
+  mainFOV: 1
+  weaponFOV: 0
+  prefab: {fileID: 4588427754933877228, guid: c21ad23339d21634385009a0f6282744, type: 3}
+  display: {fileID: 4588427754933877228, guid: 6e2a4d76f17e19b479d100adb81486ca, type: 3}

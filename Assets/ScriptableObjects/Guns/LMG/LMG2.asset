@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: LMG2
+  m_EditorClassIdentifier: 
+  gunName: LMG2
+  firingType: 1
+  burstAmount: 0
+  pellets: 3
+  recovery: 0
+  canBeAimed: 0
+  damage: 100
+  headShotMultiplier: 15
+  firerate: 0.1
+  ammo: 150
+  clipsize: 75
+  reloadTime: 5
+  aimSpeed: 10
+  bloom: 100
+  adsBloom: 100
+  recoil: 4
+  adsRecoil: 4
+  kickback: 0.2
+  muzzleFlash: {fileID: 718690339124133421, guid: a59ff2fc409098444b3787562ec26b66, type: 3}
+  muzzleFlashScale: 1
+  gunshotSound: {fileID: 8300000, guid: 3f0b66f841daa7c41b4d64e2ca55a551, type: 3}
+  equipSound: {fileID: 8300000, guid: 400b0e70eec42e64a842b64745930b97, type: 3}
+  reloadSound: {fileID: 8300000, guid: 236f4b7adc0f53a4a9f860b3dd67feb8, type: 3}
+  pitchRandomization: 0.25
+  mainFOV: 1
+  weaponFOV: 0
+  prefab: {fileID: 4588427754933877228, guid: 027656f9047bc044d911fd2201542b37, type: 3}
+  display: {fileID: 4588427754933877228, guid: db5f9b2f4aecc534aaa473b3ff078ddd, type: 3}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: SG2
+  m_EditorClassIdentifier: 
+  gunName: SG2
+  firingType: 3
+  burstAmount: 0
+  pellets: 20
+  recovery: 0
+  canBeAimed: 0
+  damage: 100
+  headShotMultiplier: 2
+  firerate: 1.25
+  ammo: 24
+  clipsize: 4
+  reloadTime: 2
+  aimSpeed: 7
+  bloom: 50
+  adsBloom: 45
+  recoil: 15
+  adsRecoil: 0
+  kickback: 0.25
+  muzzleFlash: {fileID: 718690339124133421, guid: e47ee3b1cecd0444bab15d6835ba1ee4, type: 3}
+  muzzleFlashScale: 2
+  gunshotSound: {fileID: 8300000, guid: 603be6aa50256af4c869611a5c69b555, type: 3}
+  equipSound: {fileID: 8300000, guid: 1ae43fb5cb569a54e9da1b0b598d9d65, type: 3}
+  reloadSound: {fileID: 8300000, guid: c2afccee9540ba249b5ab3942d30126c, type: 3}
+  chargingSound: {fileID: 8300000, guid: 728fd049608b1d440b03ccb9d85b7af4, type: 3}
+  pitchRandomization: 0.125
+  mainFOV: 1
+  weaponFOV: 0
+  prefab: {fileID: 4588427754933877228, guid: c3c9f41397a76d44d8bcd5854ea949af, type: 3}
+  display: {fileID: 4588427754933877228, guid: da587397012e34a4487208142cd36589, type: 3}

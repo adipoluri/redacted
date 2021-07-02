@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: RL1
+  m_EditorClassIdentifier: 
+  gunName: RL1
+  firingType: 0
+  burstAmount: 0
+  pellets: 0
+  recovery: 0
+  canBeAimed: 0
+  damage: 1500
+  headShotMultiplier: 0
+  firerate: 0.07
+  ammo: 0
+  clipsize: 0
+  reloadTime: 3
+  aimSpeed: 10
+  bloom: 25
+  adsBloom: 0
+  recoil: 2
+  adsRecoil: 0
+  kickback: 0.1
+  muzzleFlash: {fileID: 0}
+  muzzleFlashScale: 0
+  gunshotSound: {fileID: 8300000, guid: aea84b1366d19c14ea9f2bf6436c48e3, type: 3}
+  equipSound: {fileID: 8300000, guid: 1e5da26537154c947af732b6530e0a59, type: 3}
+  reloadSound: {fileID: 8300000, guid: 41f6a294494738747be30216442d6b75, type: 3}
+  pitchRandomization: 0
+  mainFOV: 1
+  weaponFOV: 0
+  prefab: {fileID: 4588427754933877228, guid: 06cd264ede9aca940bda4b6e68049a36, type: 3}
+  display: {fileID: 4588427754933877228, guid: e073bfa83d70c3a4093e00feaf048fdf, type: 3}

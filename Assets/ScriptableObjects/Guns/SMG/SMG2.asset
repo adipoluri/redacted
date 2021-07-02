@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: SMG2
+  m_EditorClassIdentifier: 
+  gunName: SMG2
+  firingType: 1
+  burstAmount: 0
+  pellets: 0
+  recovery: 0
+  canBeAimed: 1
+  damage: 200
+  headShotMultiplier: 3
+  firerate: 0.06
+  ammo: 125
+  clipsize: 25
+  reloadTime: 2.25
+  aimSpeed: 12
+  bloom: 25
+  adsBloom: 20
+  recoil: 2
+  adsRecoil: 1.25
+  kickback: 0.05
+  muzzleFlash: {fileID: 7161712705663892824, guid: 51605e3fb58043d439fbc48b5c5be09a, type: 3}
+  muzzleFlashScale: 0.2
+  gunshotSound: {fileID: 8300000, guid: 7eefe4f3f37d1274cbfffbd92e4c327b, type: 3}
+  equipSound: {fileID: 8300000, guid: fc884991348fd3b4fb68f20881058465, type: 3}
+  reloadSound: {fileID: 8300000, guid: 821b0ad4938caf8429ed81a44eaf9c68, type: 3}
+  chargingSound: {fileID: 0}
+  pitchRandomization: 0.1
+  mainFOV: 0.8
+  weaponFOV: 0.5
+  prefab: {fileID: 4588427754933877228, guid: fbb8d0141c46b6647b7d987bbe852897, type: 3}
+  display: {fileID: 4588427754933877228, guid: 8ea15951d38c46d4c99189fa03137db5, type: 3}

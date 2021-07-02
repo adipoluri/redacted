@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
+  m_Name: PS1
+  m_EditorClassIdentifier: 
+  gunName: PS1
+  firingType: 0
+  burstAmount: 0
+  pellets: 0
+  recovery: 0
+  canBeAimed: 1
+  damage: 260
+  headShotMultiplier: 3
+  firerate: 0.088
+  ammo: 96
+  clipsize: 12
+  reloadTime: 1.75
+  aimSpeed: 20
+  bloom: 15
+  adsBloom: 10
+  recoil: 7
+  adsRecoil: 6
+  kickback: 0.1
+  muzzleFlash: {fileID: 5658046897136282605, guid: 087326b9e1a7aa54d9628fff2e87c310, type: 3}
+  muzzleFlashScale: 0.5
+  gunshotSound: {fileID: 8300000, guid: b4d6f25ba81bdc94dadb8db476736797, type: 3}
+  equipSound: {fileID: 8300000, guid: 90f9f8b0de7d7cf4e92b229e242a9a2f, type: 3}
+  reloadSound: {fileID: 8300000, guid: da29c44548087e2468397b463a52c3bd, type: 3}
+  pitchRandomization: 0.05
+  mainFOV: 0.9
+  weaponFOV: 0.6
+  prefab: {fileID: 4588427754933877228, guid: accd078775758aa4faa84ccc06c993dc, type: 3}
+  display: {fileID: 4588427754933877228, guid: 671b0f9fb9cb547429113e1dd11a201a, type: 3}

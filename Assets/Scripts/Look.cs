@@ -14,7 +14,9 @@ namespace com.AstralSky.FPS
         public static bool cursorLock = true;
         
         public Transform player;
-        public Transform cams;
+        public Transform normalCam;
+        public Transform weaponCam;
+
         public Transform weapon;
 
         public float xSensitivity;
@@ -30,18 +32,21 @@ namespace com.AstralSky.FPS
 
         void Start()
         {
-            camCenter = cams.localRotation;
+            camCenter = normalCam.localRotation;
         }
 
         // Update is called once per frame
         void Update()
         {
             if(!photonView.IsMine) return;
+            if(Pause.paused) return;
 
             SetY();
             SetX();
 
             UpdateCursorLock();
+
+            weaponCam.rotation = normalCam.rotation;
         }
 
 
@@ -54,14 +59,14 @@ namespace com.AstralSky.FPS
         {
             float t_input = Input.GetAxis("Mouse Y") * ySensitivity * Time.deltaTime;
             Quaternion t_adj = Quaternion.AngleAxis(t_input, -Vector3.right);
-            Quaternion t_delta = cams.localRotation * t_adj;
+            Quaternion t_delta = normalCam.localRotation * t_adj;
 
             if(Quaternion.Angle(camCenter, t_delta) < maxAngle) 
             {
-                cams.localRotation = t_delta;
+                normalCam.localRotation = t_delta;
             }
             
-            weapon.rotation = cams.rotation;
+            weapon.rotation = normalCam.rotation;
         }
 
         void SetX()
@@ -89,7 +94,7 @@ namespace com.AstralSky.FPS
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
-                if(Input.GetKeyDown(KeyCode.Escape))
+                if(Input.GetKeyDown(KeyCode.Escape) || !Pause.paused)
                 {
                     cursorLock = true;
                 }
