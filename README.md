@@ -5,14 +5,15 @@ This was the first Unity game I developed which taught me a lot of important thi
 through the whole development process. I plan to make more games and share my ideas 
 with all of you.  
 
-A little bit about the process:
+##A little bit about the process:
 
 Redacted was built using Unity as the core engine and Photon for multiplayer support. Most of the code
 is written in C#. This project was pretty hard partially due to my inexperience with Unity and Game dev as a whole.
 I learned a lot and plan to use everything I learn to make better and cooler games. I have a lot of ideas and cant 
 wait to make them a reality!
 
-A little bit about the game itself:
+##A little bit about the game itself:
+
 [REDACTED] is a fast-paced FPS Multiplayer deathmatch game. 
 The aim of the game is to simply be better than your opponents. 
 Go grab a few of your friends, create a lobby, and see who is built different!
