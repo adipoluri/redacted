@@ -549,6 +549,133 @@ Transform:
   m_Father: {fileID: 2041999638752060404}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1637203641021518335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6827631739480832399}
+  - component: {fileID: 5770040814985143268}
+  m_Layer: 0
+  m_Name: Walking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6827631739480832399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637203641021518335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4016881138177880895}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &5770040814985143268
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637203641021518335}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 067a9f35fd8449d41820af837bd44d42, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6597a368cd74a924eaedb0171d5b28d3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1639093882825389785
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +990,7 @@ Transform:
   m_Children:
   - {fileID: 5354394923689012849}
   - {fileID: 6086126237971079321}
+  - {fileID: 6827631739480832399}
   m_Father: {fileID: 2746707727891042988}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1069,8 +1197,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2746707727891043159}
   serializedVersion: 2
-  m_Mass: 150
-  m_Drag: 0
+  m_Mass: 350
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1089,11 +1217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de7b996871d9844da98f583dd334b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 700
   sprintModifier: 2
   crouchModifier: 0.5
-  jumpForce: 5
+  jumpForce: 8
   crouchAmount: 0.5
+  walking: {fileID: 5770040814985143268}
   maxHealth: 1000
   normalCam: {fileID: 2746707728491527542}
   weaponCam: {fileID: 2939091427796915538}
@@ -1132,8 +1261,8 @@ MonoBehaviour:
   normalCam: {fileID: 2746707728491527539}
   weaponCam: {fileID: 5509723300360076437}
   weapon: {fileID: 2746707728929381335}
-  xSensitivity: 200
-  ySensitivity: 200
+  xSensitivity: 150
+  ySensitivity: 150
   maxAngle: 75
 --- !u!114 &2746707727891042991
 MonoBehaviour:
@@ -1153,6 +1282,8 @@ MonoBehaviour:
   weaponParent: {fileID: 2746707728929381335}
   bulletHolePrefab: {fileID: 1369463884740531843, guid: 614ad5a0a3db8e44ba0294d5a03bffb9, type: 3}
   bloodParticles: {fileID: 3017778506433866896, guid: 9289dd66384f79b4f804f6985ceaead4, type: 3}
+  reloadExplosion: {fileID: 1248331578108354, guid: fba3984b4d1739047b5b3e699ebda36a, type: 3}
+  weaponThrowSpeed: 4000
   canBeShot:
     serializedVersion: 2
     m_Bits: 102401

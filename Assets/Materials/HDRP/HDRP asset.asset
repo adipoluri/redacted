@@ -351,7 +351,7 @@ MonoBehaviour:
       ChromaticAberrationMaxSamples: 03000000060000000c000000
     lightSettings:
       useContactShadow:
-        m_Values: 000001
+        m_Values: 000100
         m_SchemaId:
           m_Id: With3Levels
     maximumLODLevel:
@@ -444,11 +444,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eabf324c1472a084195dde3541b142bb, type: 2}
   beforeTransparentCustomPostProcesses: []
   beforeTAACustomPostProcesses: []
-  beforePostProcessCustomPostProcesses:
-  - UnityEngine.Rendering.HighDefinition.Compositor.ChromaKeying, Unity.RenderPipelines.HighDefinition.Runtime,
-    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - UnityEngine.Rendering.HighDefinition.Compositor.AlphaInjection, Unity.RenderPipelines.HighDefinition.Runtime,
-    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  beforePostProcessCustomPostProcesses: []
   afterPostProcessCustomPostProcesses: []
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256

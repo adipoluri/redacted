@@ -13,6 +13,7 @@ namespace com.AstralSky.FPS
 
         public List<GameObject> crossHairs;
         public Transform crossHairParent;
+        public GameObject player;
 
         public void SetAmbientVolume (float volume)
         {
@@ -32,6 +33,12 @@ namespace com.AstralSky.FPS
             }
 
             GameObject t_ch = Instantiate(crossHairs[p_ind], crossHairParent) as GameObject;
+        }
+
+         public void SetSensitivity (float volume)
+        {
+            player.GetComponent<Look>().updateSens(volume);
+            player.GetComponent<Look>().updateSens(volume);
         }
 
 

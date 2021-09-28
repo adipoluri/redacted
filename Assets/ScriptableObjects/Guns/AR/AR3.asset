@@ -32,11 +32,13 @@ MonoBehaviour:
   kickback: 0.15
   muzzleFlash: {fileID: 2327208726796981185, guid: dba9c1304df6a9f4abed020edf7d2ba3, type: 3}
   muzzleFlashScale: 0.75
-  gunshotSound: {fileID: 8300000, guid: 629c0ec6d1a5d9e40a1d380417e1462b, type: 3}
+  gunshotSound: {fileID: 8300000, guid: c25464401586f944eb0a5e6d779094b0, type: 3}
   equipSound: {fileID: 8300000, guid: c245e1935289ab3488d030a7a6aa4ac2, type: 3}
   reloadSound: {fileID: 8300000, guid: fcacd90d27bc1a84582e02cac584f311, type: 3}
+  chargingSound: {fileID: 0}
   pitchRandomization: 0.175
   mainFOV: 0.675
   weaponFOV: 0.4
   prefab: {fileID: 4588427754933877228, guid: c28e6018033382c4b94607dc89a231ff, type: 3}
   display: {fileID: 4588427754933877228, guid: ee07bdd4b0451f246833f6e4f2bbc119, type: 3}
+  throwable: {fileID: 4588427754933877228, guid: 3ff785ebf5a3f024b9031d0c03e09db7, type: 3}

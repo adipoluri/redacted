@@ -13,21 +13,32 @@ MonoBehaviour:
   m_Name: GL1
   m_EditorClassIdentifier: 
   gunName: GL1
-  firerate: 0.07
-  aimSpeed: 10
-  bloom: 25
-  recoil: 2
-  kickback: 0.1
+  firingType: 0
+  burstAmount: 0
   pellets: 0
+  recovery: 0
+  canBeAimed: 0
   damage: 250
+  headShotMultiplier: 0
+  firerate: 0.07
   ammo: 210
   clipsize: 30
   reloadTime: 1.5
-  burst: 0
+  aimSpeed: 10
+  bloom: 25
+  adsBloom: 0
+  recoil: 2
+  adsRecoil: 0
+  kickback: 0.1
+  muzzleFlash: {fileID: 0}
+  muzzleFlashScale: 0
   gunshotSound: {fileID: 0}
+  equipSound: {fileID: 0}
+  reloadSound: {fileID: 0}
+  chargingSound: {fileID: 0}
   pitchRandomization: 0
   mainFOV: 0
   weaponFOV: 0
   prefab: {fileID: 4588427754933877228, guid: 26736d39f76d6ab41aa5f8e83fff4d2a, type: 3}
   display: {fileID: 4588427754933877228, guid: 77c799c416239664b9e9dd23ef9729fb, type: 3}
-  recovery: 0
+  throwable: {fileID: 4588427754933877228, guid: 830afcf5f72aa064c98102166c3b948b, type: 3}

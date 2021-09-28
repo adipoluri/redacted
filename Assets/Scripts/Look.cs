@@ -102,6 +102,12 @@ namespace com.AstralSky.FPS
             
         }
 
+        public void updateSens(float sens)
+        {
+            xSensitivity = sens;
+            ySensitivity = sens;
+        }
+
         #endregion
     
     }

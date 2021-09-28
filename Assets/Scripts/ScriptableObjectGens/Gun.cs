@@ -49,7 +49,7 @@ namespace com.AstralSky.FPS
         [Header("Weapon Objects")]
         public GameObject prefab;
         public GameObject display;
-        
+        public GameObject throwable;
 
         private int stash; //Current Ammo
         private int clip;  //Current Clip

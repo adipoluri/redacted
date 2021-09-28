@@ -27,10 +27,27 @@ namespace com.AstralSky.FPS
             this.deaths = d;
         }
     }
+
+
+
+    public enum GameState
+    {
+         Waiting = 0,
+         Starting = 1,
+         Playing = 2,
+         Ending = 3
+    }
+
+
     public class Manager : MonoBehaviourPunCallbacks, IOnEventCallback
     {
        
         #region Fields
+
+        public int mainmenu = 0;
+        public int killcount = 20;
+
+        public GameObject mapCam;
 
         public string playerPrefab;
         public Transform[] spawnPoints;
@@ -41,6 +58,10 @@ namespace com.AstralSky.FPS
         private TMP_Text ui_mykills;
         private TMP_Text ui_mydeaths;
         private Transform ui_leaderboard;
+        private Transform ui_endgame;
+
+        private GameState state = GameState.Waiting;
+
 
         #endregion
 
@@ -57,6 +78,9 @@ namespace com.AstralSky.FPS
 
         public void Start()
         {
+
+            mapCam.SetActive(false);
+            
             ValidateConnection();
             InitializeUI();
             NewPlayer_S(Launcher.myProfile);
@@ -64,6 +88,12 @@ namespace com.AstralSky.FPS
         }
 
         private void Update() {
+
+            if(state == GameState.Ending)
+            {
+                return;
+            }
+
             if(Input.GetKeyDown(KeyCode.Tab))
             {
                 if(ui_leaderboard.gameObject.activeSelf) ui_leaderboard.gameObject.SetActive(false);
@@ -71,7 +101,12 @@ namespace com.AstralSky.FPS
             }
         }
 
-
+        public override void OnLeftRoom ()
+        {
+            base.OnLeftRoom();
+            SceneManager.LoadScene(mainmenu);
+        }
+        
         public void Spawn()
         {
             Transform t_spawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
@@ -105,6 +140,7 @@ namespace com.AstralSky.FPS
             ui_mykills = GameObject.Find("HUD/Stats/Kills/Kills").GetComponent<TMP_Text>();
             ui_mydeaths = GameObject.Find("HUD/Stats/Deaths/Deaths").GetComponent<TMP_Text>();
             ui_leaderboard = GameObject.Find("HUD").transform.Find("Leaderboard").transform;
+            ui_endgame = GameObject.Find("Canvas").transform.Find("End Game").transform;
 
             RefreshMyStats();
         }
@@ -128,7 +164,56 @@ namespace com.AstralSky.FPS
         private void ValidateConnection()
         {
             if(PhotonNetwork.IsConnected) return;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(mainmenu);
+        }
+
+        private void StateCheck ()
+        {
+            if(state == GameState.Ending) 
+            {
+                EndGame();
+            }
+        }
+
+        private void ScoreCheck ()
+        {
+            bool detectWin = false;
+
+            foreach (PlayerInfo a in playerInfo)
+            {
+                if(a.kills >= 25)
+                {
+                    detectWin = true;
+                    break;
+                }
+            }
+
+            if(detectWin)
+            {
+                if(PhotonNetwork.IsMasterClient && state != GameState.Ending)
+                {
+                    UpdatePlayer_S((int)GameState.Ending, playerInfo);
+                }
+            }
+        }
+
+        private void EndGame()
+        {
+            state = GameState.Ending;
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.DestroyAll();
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+            }
+
+            mapCam.SetActive(true);
+
+            ui_endgame.gameObject.SetActive(true);
+            Leaderboard(ui_endgame.Find("Leaderboard"));
+
+            StartCoroutine(End(6f));
         }
 
 
@@ -238,14 +323,15 @@ namespace com.AstralSky.FPS
 
             playerInfo.Add(p);
 
-            UpdatePlayer_S(playerInfo);
+            UpdatePlayer_S((int)state,playerInfo);
         }
 
 
-        public void UpdatePlayer_S(List<PlayerInfo> info)
+        public void UpdatePlayer_S(int state, List<PlayerInfo> info)
         {
-            object[] package = new object[info.Count];
+            object[] package = new object[info.Count + 1];
 
+            package[0] = state;
             for(int i = 0; i < info.Count; i++)
             {
                 object[] piece = new object[6];
@@ -257,7 +343,7 @@ namespace com.AstralSky.FPS
                 piece[4] = info[i].kills;
                 piece[5] = info[i].deaths;
 
-                package[i] = piece;
+                package[i + 1] = piece;
 
             }
 
@@ -270,10 +356,11 @@ namespace com.AstralSky.FPS
         }
 
         public void UpdatePlayers_R(object[] data)
-        {
+        {   
+            state = (GameState)data[0];
             playerInfo = new List<PlayerInfo>();
 
-            for(int i = 0; i < data.Length; i++)
+            for(int i = 1; i < data.Length; i++)
             {
                 object[] extract = (object[]) data[i];
 
@@ -290,10 +377,13 @@ namespace com.AstralSky.FPS
 
                 playerInfo.Add(p);
                 
-                if(PhotonNetwork.LocalPlayer.ActorNumber == p.actor) myind = i;
+                if(PhotonNetwork.LocalPlayer.ActorNumber == p.actor) myind = i - 1;
             }
+
+            StateCheck();
     
         }
+
 
         public void ChangeStat_S(int actor, byte stat,byte amt)
         {
@@ -334,9 +424,24 @@ namespace com.AstralSky.FPS
                     if(i == myind) RefreshMyStats();
                     if(ui_leaderboard.gameObject.activeSelf) Leaderboard(ui_leaderboard);
 
-                    return;
+                    break;
                 }
             }
+
+            ScoreCheck();
+        }
+
+        #endregion
+
+
+        #region Coroutines
+
+        private IEnumerator End (float p_wait)
+        {
+            yield return new WaitForSeconds(p_wait);
+
+            PhotonNetwork.AutomaticallySyncScene = false;
+            PhotonNetwork.LeaveRoom();
         }
 
         #endregion

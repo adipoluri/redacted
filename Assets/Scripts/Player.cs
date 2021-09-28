@@ -19,6 +19,7 @@ namespace com.AstralSky.FPS
         public float crouchModifier;
         public float jumpForce;
         public float crouchAmount;
+        public AudioSource walking;
         
         [Header("Player Health")]
         public float maxHealth;
@@ -108,7 +109,7 @@ namespace com.AstralSky.FPS
             }
 
             cameraParent.SetActive(photonView.IsMine);
-            if(Camera.main) Camera.main.enabled = false;
+            //if(Camera.main) Camera.main.enabled = false;
             
             baseFOV = normalCam.fieldOfView;
             origin = normalCam.transform.localPosition;
@@ -122,6 +123,9 @@ namespace com.AstralSky.FPS
             ambientAudio.Stop();
             ambientAudio.clip =  respawnSound;
             ambientAudio.Play();
+
+            //walking audio Stop
+            walking.Stop();
 
             //set Healthbar
             if(photonView.IsMine)
@@ -205,30 +209,39 @@ namespace com.AstralSky.FPS
             //Head bob
             if(!isGrounded) 
             {
+                //Pause Walking Noise
+                walking.Stop();
+
                 HeadBob(idleCounter, 0.02f,0.02f);
                 idleCounter += 0;
                 weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 2f);
             }
             else if (t_hmove == 0 && t_vmove == 0) 
-            {
+            {   
+                //Pause Walking Noise
+                walking.Stop();
+
                 HeadBob(idleCounter, 0.02f,0.02f);
                 idleCounter += Time.deltaTime;
                 weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 2f);
             } 
             else if (!isSprinting && !crouched) 
             {
+
                 HeadBob(movementCounter, 0.035f,0.035f);
                 movementCounter += Time.deltaTime * 3f;
                 weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 6f);
             } 
             else if(crouched)
             {
+
                 HeadBob(movementCounter, 0.02f,0.02f);
                 movementCounter += Time.deltaTime * 1.75f;
                 weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 6f);
             }
             else 
             {
+
                 HeadBob(movementCounter, 0.15f,0.075f);
                 movementCounter += Time.deltaTime * 7f;
                 weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f); 
@@ -238,6 +251,19 @@ namespace com.AstralSky.FPS
             //UI Refresh
             RefreshHealthBar();
             weapon.RefreshAmmo(ui_ammo);
+
+
+            //Walking Noises
+            if (t_hmove == 0 && t_vmove == 0) 
+            {   
+                //Pause Walking Noise
+                walking.Pause();
+
+            } else if(isGrounded && !walking.isPlaying){
+                walking.pitch = 1 - 0.25f + Random.Range(-0.25f, 0.25f);
+                                    
+                walking.Play();
+            }
         }
 
 
@@ -417,6 +443,17 @@ namespace com.AstralSky.FPS
                     if(p_actor >= 0) manager.ChangeStat_S(p_actor, 0, 1);
                     PhotonNetwork.Destroy(gameObject);
                 }
+            }
+            
+        }
+
+
+        public void Heal ()
+        {
+            if(photonView.IsMine)
+            {
+                currentHealth = maxHealth;
+                RefreshHealthBar();
             }
             
         }

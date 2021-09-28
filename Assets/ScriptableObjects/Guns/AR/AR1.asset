@@ -35,8 +35,10 @@ MonoBehaviour:
   gunshotSound: {fileID: 8300000, guid: 9abed5b8e18297445be34ed3a2d79c84, type: 3}
   equipSound: {fileID: 8300000, guid: ce091e0277698094d986e712f86ba054, type: 3}
   reloadSound: {fileID: 8300000, guid: e5809418230df354b802400127e1c2f1, type: 3}
+  chargingSound: {fileID: 0}
   pitchRandomization: 0.1
   mainFOV: 0.7
   weaponFOV: 0.45
   prefab: {fileID: 4588427754933877228, guid: c05adda668b974848b204c819608d277, type: 3}
   display: {fileID: 4588427754933877228, guid: 4110917b43aa8e7479895262f9de91d1, type: 3}
+  throwable: {fileID: 4588427754933877228, guid: 870a71a5e6000fe47bf399e0bd9ba3bc, type: 3}

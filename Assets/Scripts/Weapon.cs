@@ -17,6 +17,8 @@ namespace com.AstralSky.FPS
         public Transform weaponParent;
         public GameObject bulletHolePrefab;
         public GameObject bloodParticles;
+        public GameObject reloadExplosion;
+        public float weaponThrowSpeed;
         public LayerMask canBeShot;
         public AudioSource sfx;
         public bool isAiming = false;
@@ -30,6 +32,7 @@ namespace com.AstralSky.FPS
         private int currentIndex;
         private GameObject currentWeapon;
         private bool isReloading;
+        
 
   
         #endregion
@@ -153,7 +156,7 @@ namespace com.AstralSky.FPS
                     }
 
                     //reload
-                    if(Input.GetKeyDown(KeyCode.R) && loadout[currentIndex].GetStash() > 0) StartCoroutine(Reload(loadout[currentIndex].reloadTime));
+                    if(Input.GetKeyDown(KeyCode.R) && loadout[currentIndex].GetStash() > 0 && loadout[currentIndex].clipsize != loadout[currentIndex].GetClip() && !isReloading) StartCoroutine(Reload(loadout[currentIndex].reloadTime));
 
                     //cooldown
                     if (currentCooldown > 0) currentCooldown -= Time.deltaTime;
@@ -189,6 +192,7 @@ namespace com.AstralSky.FPS
             }
 
             currentIndex = p_ind;
+
 
             GameObject t_newWeapon = Instantiate(loadout[p_ind].prefab, weaponParent.position, weaponParent.rotation, weaponParent) as GameObject;
             t_newWeapon.transform.localPosition = Vector3.zero;
@@ -385,9 +389,17 @@ namespace com.AstralSky.FPS
             currentWeapon.SetActive(false);
             
             playReload();
-            
-            
+
+            GameObject t_reloadProp = Instantiate (currentGunData.throwable, weaponParent.position, weaponParent.rotation) as GameObject;
+            t_reloadProp.GetComponent<Rigidbody>().AddForce(weaponParent.forward * weaponThrowSpeed, ForceMode.Impulse);
+
             yield return new WaitForSeconds(p_wait);
+
+            GameObject t_reloadExplosion = Instantiate (reloadExplosion, t_reloadProp.transform.position, t_reloadProp.transform.rotation) as GameObject;
+            t_reloadExplosion.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            
+            Destroy(t_reloadExplosion, 2f);
+            Destroy(t_reloadProp);
 
             loadout[currentIndex].Reload();
             currentWeapon.SetActive(true);

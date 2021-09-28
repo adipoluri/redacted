@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857b8c19c3911074fa6d38e5ace11316, type: 3}
   m_Name: LG1
   m_EditorClassIdentifier: 
-  gunName: LG1
+  gunName: LG2
   firingType: 3
   burstAmount: 0
   pellets: 0
@@ -41,3 +41,4 @@ MonoBehaviour:
   weaponFOV: 0
   prefab: {fileID: 4588427754933877228, guid: c97e7eeed96a74d46ad439da2cb23f90, type: 3}
   display: {fileID: 4588427754933877228, guid: 3ad7a4c048aaa9845838d78410a7e8da, type: 3}
+  throwable: {fileID: 4588427754933877228, guid: a430d58ca19e59548b57f4d04ebb5840, type: 3}

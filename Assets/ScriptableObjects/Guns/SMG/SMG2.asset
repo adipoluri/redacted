@@ -41,3 +41,4 @@ MonoBehaviour:
   weaponFOV: 0.5
   prefab: {fileID: 4588427754933877228, guid: fbb8d0141c46b6647b7d987bbe852897, type: 3}
   display: {fileID: 4588427754933877228, guid: 8ea15951d38c46d4c99189fa03137db5, type: 3}
+  throwable: {fileID: 4588427754933877228, guid: a1ccb860c964d4c408c3d0d48cce7ddb, type: 3}
