@@ -26,5 +26,5 @@ scuffed as possible!
 IF you would like to test out [REDACTED], feel free to check out the link below :)!
 https://4d1games.itch.io/redacted
 
-### Demo Video
-[![Alternate Text]({image-url})](https://www.youtube.com/watch?v=0CjtybXXuxo "Link Title")
+
+[![### Watch My Demo Video]({image-url})](https://www.youtube.com/watch?v=0CjtybXXuxo "[REDACTED] Demo Video")
