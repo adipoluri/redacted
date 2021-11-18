@@ -27,4 +27,4 @@ IF you would like to test out [REDACTED], feel free to check out the link below 
 https://4d1games.itch.io/redacted
 
 
-[![Watch My Demo Video]](https://www.youtube.com/watch?v=0CjtybXXuxo "[REDACTED] Demo Video")
+[Watch My Demo Video](https://www.youtube.com/watch?v=0CjtybXXuxo "[REDACTED] Demo Video")
